@@ -1,0 +1,418 @@
+/* Retirar toda margin e padding da página... */
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 990;
+
+}
+
+/* Primeira Div... container agrupando a barra de navegação, saldação e a imagem. */
+.primary-container {
+  background-image: linear-gradient(to top, rgb(207, 183, 246), rgb(69, 5, 141));
+  min-height: 700px;
+  align-items: center;
+  padding-top: 0;
+  display: inline-block;
+}
+
+nav {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgb(207, 183, 246), rgb(69, 5, 141));
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  font-weight: 800;
+}
+
+.logo-size {
+  width: 70px;
+}
+
+.menu {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.menu:hover {
+  color: rgb(7, 255, 164)
+}
+
+#meu-nome {
+  font-family: "Courier";
+  font-size: 50px;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 10em;
+  animation: type 4s steps(60, end) 10s infinite;
+}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+}
+
+.saldacao {
+  display: flex;
+  position: relative;
+  top: -300px;
+  padding-left: 30px;
+  width: 70%;
+  font-size: 40px;
+  font-family: "Courier";
+}
+
+.link {
+  color: rgb(23, 1, 41);
+  border: 1px solid rgb(41, 5, 90);
+  border-radius: 10px;
+  padding: 15px 100px;
+  margin-top: 5px;
+  position: absolute;
+  display: flex;
+  text-decoration: none;
+  font-size: 20px;
+  top: 95%;
+  margin-left: 10%;
+transition: 2.3s;
+}
+
+.link:hover {
+  letter-spacing: 7px;
+  transition: 3s;
+  transition-delay: 0.2s;
+  background-image: linear-gradient(to top, rgb(207, 183, 246), rgb(69, 5, 141));
+}
+
+.personagem {
+  width: 25%;
+  position: relative;
+  display: flex;
+  left: 75%;
+  margin-top: 150px;
+  border-bottom: 4px solid rgb(69, 5, 141);
+  border-radius: 200px;
+  animation: desenhoAnimacao 2.1s infinite alternate-reverse linear;
+  box-shadow: rgba(44, 1, 109, 0.4) 10px 10px;
+}
+
+@keyframes desenhoAnimacao {
+  0% {
+    top: -15px;
+  }
+
+  100% {
+    top: 30px;
+  }
+}
+
+/* Segunda Div... Sobre mim, efeitos de opacidade */
+.animated-text h2 {
+  font-family: 'DidotItalic';
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 130px;
+  color: rgba(255, 255, 255, 0.239);
+  line-height: 94px;
+  letter-spacing: -3px;
+}
+
+.animated-text h2 span {
+  display: inline;
+}
+
+h3 {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  text-align: center;
+  animation: sobreMim 3.8s linear infinite;
+}
+
+.animated-text h3 {
+  font-size: 40px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-weight: 300;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0, 0, 0.58, 1) 0s;
+  transform: translateY(-115px);
+}
+
+.sobre-mim {
+  padding-top: 100px;
+  background-color: rgb(207, 183, 246);
+  height: 600px;
+  text-align: center;
+  display: inline-block;
+}
+
+@keyframes sobreMim {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.txt-sobre-mim {
+  font-size: 18px;
+  text-align: center;
+  font-family: "Courier";
+  position: relative;
+}
+
+.txt-sobre-mim::first-letter {
+  font-size: 30px;
+}
+
+.txt-sobre-mim .txt-link {
+  text-decoration: none;
+}
+
+/* Terceira Div... Habilidades*/
+.habilidades {
+  min-height: 1100px;
+  background-image: linear-gradient(to bottom, rgb(207, 183, 246), rgb(69, 5, 141), rgb(127, 107, 159), rgb(69, 5, 141), rgb(110, 86, 149), rgb(207, 183, 246));
+}
+
+.habilidades h2 {
+  font-family: "Courier";
+  text-align: center;
+  padding-top: 5%;
+  font-size: 50px;
+  letter-spacing: 30px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  min-height: 100vh;
+  height: 300px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  padding: 20px;
+  grid-gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+  }
+
+  .habilidades h2 {
+    font-size: 50px;
+    letter-spacing: 10px;
+    width: 100%;
+  }
+}
+
+.box {
+  margin-left: 40px;
+  width: 200px;
+  height: 250px;
+  border: 1px solid #6803ff;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: rgb(98, 0, 255) 10px 5px;
+}
+
+.box h4 {
+  padding-top: 0;
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+.box .logo-habilidades {
+  position: relative;
+  top: 40%;
+  left: 70%;
+  width: 100px;
+  transform: translate(-90%, -50%);
+  transition: .5s ease-in-out;
+}
+
+.box .content {
+  display: none;
+}
+
+.box:hover img.logo-habilidades {
+  width: 40px;
+  transform: translate(40px, -135px);
+}
+
+.box:hover .content {
+  display: inline-block;
+  transition: .5s ease-in-out;
+  padding: 0px 10px;
+}
+
+.box .content p {
+  color: #FFF;
+  letter-spacing: 1px;
+}
+
+/* Quarta Div... projetos */
+.projetos {
+  background-color: rgb(207, 183, 246);
+  height: 100%;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.containers {
+  min-height: 170vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  padding: 10px;
+  grid-gap: 10px;
+}
+
+.projetos h2 {
+  font-family: "Courier";
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 50px;
+  letter-spacing: 30px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.projetos .box {
+  margin-left: 22px;
+  width: 400px;
+  height: 280px;
+  border: 1px solid #797979;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.breve {
+  margin-top: 80px;
+  font-family: "Courier";
+  width: 400px;
+  height: 40px;
+  background-color: #40038a;
+  padding-top: 15px;
+  left: 0;
+}
+
+.breve p {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+@media (max-width: 600px) {
+  .containers {
+    display: grid;
+    grid-template-columns: auto;
+    min-height: 160vh;
+    width: 70%;
+    padding-left: 1px;
+    grid-gap: 30px;
+  }
+
+  .projetos {
+    padding-left: 2px
+  }
+
+  .projetos h2 {
+    letter-spacing: 10px;
+  }
+}
+
+.box a {
+  color: #FFF;
+  font-size: 25px;
+}
+.box a:hover{
+  color: #6803ff;
+}
+.image-projeto{
+  width: 300px;
+  transition: 1s;
+}
+.image-projeto:hover{
+  width: 400px;
+  transition: 1.4s;
+  position:static;
+}
+.github{
+  background-color: #FFF;
+  padding: 10px;
+  margin: 2px;
+  width: 140px;
+  display: inline-block;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 1.4s;
+}
+.github:hover{
+  background-color: #40038a;
+  color: #FFF;
+  font-weight: 600;
+}
+
+/* voltar ao topo da página */
+#back-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  color: rgb(23, 1, 41);
+  border: 1px solid rgb(41, 5, 90);
+  border-radius: 10px;
+  padding: 15px 10px;
+  text-decoration: none;
+}
+
+#back-to-top:hover {
+  background-image: linear-gradient(to left, rgb(207, 183, 246), rgb(112, 49, 185));
+  color: #FFF;
+  font-weight: 600;
+}
+footer{
+background-color: #232224;
+display: flex;
+}
+.contato{
+  color: #FFF;
+  padding-left: 100px;
+  font-weight: 600;
+}
+.icon{
+  margin-left: 200px;
+}
+.icones{
+  width: 50px;
+  height: 40px;
+  padding: 20px;
+  padding: 0;
+  margin: 20px;
+  -webkit-filter:grayscale(100%);  /*mudar a cor da imagem... deixa sem cor */
+}
+.icones:hover{
+  -webkit-filter:grayscale(0%); /* muda a cor da imagem... deixa com a cor normal... segunda parte de pedaço de cima*/
+  transition: 0.6s;
+}
